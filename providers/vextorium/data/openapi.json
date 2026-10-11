@@ -11608,7 +11608,7 @@
            "type": "string"
           },
           "value": {
-           "type": "number"
+           "description": "Extracted value (any JSON type)"
           }
          }
         }
@@ -32302,7 +32302,6 @@
           "enum": [
            "base",
            "ethereum",
-           "arbitrum",
            "optimism",
            "polygon",
            "bnb",
