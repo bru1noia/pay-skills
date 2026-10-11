@@ -32285,7 +32285,7 @@
    "post": {
     "operationId": "v1/token_approvals",
     "summary": "List the contracts allowed to move a wallet's ERC-20 tokens",
-    "description": "Which contracts a wallet has allowed to move its ERC-20 tokens: checks the chain's main tokens (or the ones you pass) over recent blocks plus common spenders (Uniswap routers, Permit2), returning the live allowance and flagging unlimited ones. Find and revoke what you don't use. Usually 2-10 s. Not available on Arbitrum (its public nodes keep no log history); on some chains the public node limits how far back it can search (reported in the result).",
+    "description": "Which contracts a wallet has allowed to move its ERC-20 tokens: checks the chain's main tokens (or the ones you pass) over recent blocks plus common spenders (Uniswap routers, Permit2), returning the live allowance and flagging unlimited ones. Find and revoke what you don't use. Usually 2-10 s. On Arbitrum it reads the wallet's full approval history for every token; on other chains the public node can limit how far back it searches (reported in the result).",
     "requestBody": {
      "required": true,
      "content": {
@@ -32302,6 +32302,7 @@
           "enum": [
            "base",
            "ethereum",
+           "arbitrum",
            "optimism",
            "polygon",
            "bnb",
